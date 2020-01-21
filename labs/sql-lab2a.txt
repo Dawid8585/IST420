@@ -1,0 +1,256 @@
+.headers on
+
+-- Name: Dawid Perkowski
+-- File: sql-lab2a.sql
+-- Date: January 21, 2020
+
+-- 1. What are the regions?
+select * from region;
+RegionID|RegionDescription
+1|Eastern                                           
+2|Western                                           
+3|Northern                                          
+4|Southern
+
+-- 2. What are the cities?
+select territorydescription from territories;
+TerritoryDescription
+TerritoryDescription
+Westboro
+Bedford
+Georgetow
+Boston
+Cambridge
+Braintree
+Providence
+Hollis
+Portsmouth
+Wilton
+Morristown
+Edison
+NewYork
+NewYork
+Mellvile
+Fairport
+Philadelphia
+Neward
+Rockville
+Greensboro
+Cary
+Columbia
+Atlanta
+Savannah
+Orlando
+Tampa
+Louisville
+Beachwood
+Findlay
+Southfield
+Troy
+BloomfieldHills
+Racine
+Roseville
+Minneapolis
+HoffmanEstates
+Chicago
+Bentonville
+Dallas
+Austin
+Denver
+ColoradoSprings
+Phoenix
+Scottsdale
+SantaMonica
+MenloPark
+SanFrancisco
+Campbell
+SantaClara
+SantaCruz
+Bellevue
+Redmond
+Seattle
+
+-- 3. What are the cities in the Southern region?
+
+select territorydescription, regionid from territories where regionid = 4;
+TerritoryDescription|RegionID
+Columbia|4
+Atlanta|4
+Savannah|4
+Orlando|4
+Tampa|4
+Bentonville|4
+Dallas|4
+Austin|4
+
+-- 4.. How do you run this query with the fully qualified column name?
+
+select territories.territorydescription, territories.regionid from territories where regionid = 4;
+TerritoryDescription|RegionID
+Columbia|4
+Atlanta|4
+Savannah|4
+Orlando|4
+Tampa|4
+Bentonville|4
+Dallas|4
+Austin|4
+
+-- 5. How do you run this query with a table alias?
+
+select t.territorydescription, t.regionid from territories t where regionid = 4;
+TerritoryDescription|RegionID
+Columbia|4
+Atlanta|4
+Savannah|4
+Orlando|4
+Tampa|4
+Bentonville|4
+Dallas|4
+Austin|4
+
+-- 6. What is the contact name, telephone number, and city for each customer?
+
+select contactname, phone, city from customers;
+ContactName|Phone|City
+ContactName|Phone|City
+Maria Anders|030-0074321|Berlin
+Ana Trujillo|(5) 555-4729|México D.F.
+Antonio Moreno|(5) 555-3932|México D.F.
+Thomas Hardy|(171) 555-7788|London
+Christina Berglund|0921-12 34 65|Luleå
+Hanna Moos|0621-08460|Mannheim
+Frédérique Citeaux|88.60.15.31|Strasbourg
+Martín Sommer|(91) 555 22 82|Madrid
+Laurence Lebihan|91.24.45.40|Marseille
+Elizabeth Lincoln|(604) 555-4729|Tsawassen
+Victoria Ashworth|(171) 555-1212|London
+Patricio Simpson|(1) 135-5555|Buenos Aires
+Francisco Chang|(5) 555-3392|México D.F.
+Yang Wang|0452-076545|Bern
+Pedro Afonso|(11) 555-7647|Sao Paulo
+Elizabeth Brown|(171) 555-2282|London
+Sven Ottlieb|0241-039123|Aachen
+Janine Labrune|40.67.88.88|Nantes
+Ann Devon|(171) 555-0297|London
+Roland Mendel|7675-3425|Graz
+Aria Cruz|(11) 555-9857|Sao Paulo
+Diego Roel|(91) 555 94 44|Madrid
+Martine Rancé|20.16.10.16|Lille
+Maria Larsson|0695-34 67 21|Bräcke
+Peter Franken|089-0877310|München
+Carine Schmitt|40.32.21.21|Nantes
+Paolo Accorti|011-4988260|Torino
+Lino Rodriguez|(1) 354-2534|Lisboa
+Eduardo Saavedra|(93) 203 4560|Barcelona
+José Pedro Freyre|(95) 555 82 82|Sevilla
+André Fonseca|(11) 555-9482|Campinas
+Howard Snyder|(503) 555-7555|Eugene
+Manuel Pereira|(2) 283-2951|Caracas
+Mario Pontes|(21) 555-0091|Rio de Janeiro
+Carlos Hernández|(5) 555-1340|San Cristóbal
+Yoshi Latimer|(503) 555-6874|Elgin
+Patricia McKenna|2967 542|Cork
+Helen Bennett|(198) 555-8888|Cowes
+Philip Cramer|0555-09876|Brandenburg
+Daniel Tonini|30.59.84.10|Versailles
+Annette Roulet|61.77.61.10|Toulouse
+Yoshi Tannamuri|(604) 555-3392|Vancouver
+John Steel|(509) 555-7969|Walla Walla
+Renate Messner|069-0245984|Frankfurt a.M.
+Jaime Yorres|(415) 555-5938|San Francisco
+Carlos González|(9) 331-6954|Barquisimeto
+Felipe Izquierdo|(8) 34-56-12|I. de Margarita
+Fran Wilson|(503) 555-9573|Portland
+Giovanni Rovelli|035-640230|Bergamo
+Catherine Dewey|(02) 201 24 67|Bruxelles
+Jean Fresnière|(514) 555-8054|Montréal
+Alexander Feuer|0342-023176|Leipzig
+Simon Crowther|(171) 555-7733|London
+Yvonne Moncada|(1) 135-5333|Buenos Aires
+Rene Phillips|(907) 555-7584|Anchorage
+Henriette Pfalzheim|0221-0644327|Köln
+Marie Bertrand|(1) 42.34.22.66|Paris
+Guillermo Fernández|(5) 552-3745|México D.F.
+Georg Pipps|6562-9722|Salzburg
+Isabel de Castro|(1) 356-5634|Lisboa
+Bernardo Batista|(21) 555-4252|Rio de Janeiro
+Lúcia Carvalho|(11) 555-1189|Sao Paulo
+Horst Kloss|0372-035188|Cunewalde
+Sergio Gutiérrez|(1) 123-5555|Buenos Aires
+Paula Wilson|(505) 555-5939|Albuquerque
+Maurizio Moroni|0522-556721|Reggio Emilia
+Janete Limeira|(21) 555-3412|Rio de Janeiro
+Michael Holz|0897-034214|Genève
+Alejandra Camino|(91) 745 6200|Madrid
+Jonas Bergulfsen|07-98 92 35|Stavern
+Jose Pavarotti|(208) 555-8097|Boise
+Hari Kumar|(171) 555-1717|London
+Jytte Petersen|31 12 34 56|Kobenhavn
+Dominique Perrier|(1) 47.55.60.10|Paris
+Art Braunschweiger|(307) 555-4680|Lander
+Pascale Cartrain|(071) 23 67 22 20|Charleroi
+Liz Nixon|(503) 555-3612|Portland
+Liu Wong|(406) 555-5834|Butte
+Karin Josephs|0251-031259|Münster
+Miguel Angel Paolino|(5) 555-2933|México D.F.
+Anabela Domingues|(11) 555-2167|Sao Paulo
+Helvetius Nagy|(206) 555-8257|Kirkland
+Palle Ibsen|86 21 32 43|Århus
+Mary Saveley|78.32.54.86|Lyon
+Paul Henriot|26.47.15.10|Reims
+Rita Müller|0711-020361|Stuttgart
+Pirkko Koskitalo|981-443655|Oulu
+Paula Parente|(14) 555-8122|Resende
+Karl Jablonski|(206) 555-4112|Seattle
+Matti Karttunen|90-224 8858|Helsinki
+Zbyszek Piestrzeniewicz|(26) 642-7012|Warszawa
+
+-- 7. What are the products currently out of stock?
+
+select productid, productname, unitsinstock from products where unitsinstock = 0;
+ProductID|ProductName|UnitsInStock
+5|Chef Anton's Gumbo Mix|0
+17|Alice Mutton|0
+29|Thüringer Rostbratwurst|0
+31|Gorgonzola Telino|0
+53|Perth Pasties|0
+
+-- 8. What are the ten products currently in stock with the least amount on hand?
+
+select productid, productname, unitsinstock from products where unitsinstock >0 order by unitsinstock limit 10;
+ProductID|ProductName|UnitsInStock
+21|Sir Rodney's Scones|3
+66|Louisiana Hot Spiced Okra|4
+74|Longlife Tofu|4
+45|Rogede sild|5
+8|Northwoods Cranberry Sauce|6
+68|Scottish Longbreads|6
+32|Mascarpone Fabioli|9
+30|Nord-Ost Matjeshering|10
+49|Maxilaku|10
+37|Gravad lax|11
+
+-- 9. What are the five most expensive products in stock?
+
+select productid, productname, unitprice from products order by unitprice desc limit 5;
+ProductID|ProductName|UnitPrice
+38|Côte de Blaye|263.5
+29|Thüringer Rostbratwurst|123.79
+9|Mishi Kobe Niku|97.0
+20|Sir Rodney's Marmalade|81.0
+18|Carnarvon Tigers|62.5
+
+-- 10. How many products does Northwind have? How many customers? How many suppliers?
+
+select count(*) from products;
+count(*)
+77
+
+select count(*) from customers;
+count(*)
+92
+
+select count(*) from suppliers;
+count(*)
+29
