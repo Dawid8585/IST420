@@ -1,0 +1,17 @@
+Dawid Perkowski 20200113
+
+1) How does the book describe the difference between imperative and declarative languages?
+	SQL is not a imperative language because it wants you to specify what you want not how you want it.
+2) List 3 catagories of command statments in SQL.
+	Data Definition Language (DDL), Data Manipulation Language (DML), and Data Control Language (DCL)
+3)RDBMS is a datbase the is used to store relations and it was first implimented by CODD
+Human Relation datbase is a datbase used to keep track of all human needs for a company or client. Such as work schedule and payroll.
+4)By supporting the NULL marker to signify the generic concept of a missing value.
+5)Entity Integrity is a candidate key, which is a way to find a row and a value using it as a primary key. 
+6)Referential Integrity is a foreign key, which restricts the candidate key to search in certain values/areas.
+7)Relaiton is Normilization
+8)No because 1NF would have everything grouped together.
+9) Yes this is in 2NF because the candidate key is split into two nonkey attributes.
+10)Yes it is because the nonkey key attributes are all seperate from one another.
+11) Namespace, Object name, Database name, Instance name.
+12)Declerative data integrity uses tables to enforce its data while procedural data integrity uses already set code or triggers to enfore its data.

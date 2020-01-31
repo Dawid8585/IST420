@@ -1,0 +1,60 @@
+.headers ON
+
+
+-- Name: Dawid Perkowski
+--Script:Guns.sql
+--Date: January 16, 2020
+
+drop table if exists Guns;
+
+create table Guns (
+	id integer primary key,
+	manufactor text,
+	name_of_gun text,
+	calibar decimal,
+	origin text,
+	amount_sold integer
+);
+
+insert into Guns values (1, 'Kalashnikov','AK47',7.62, 'Russia', 100000000);
+insert into Guns values (2, 'Remington_Arms','Remington_Model',.25,'USA' ,10000000);
+insert into Guns values (3, 'Israel_Military_Industries','uzi',9,'Israel' ,10000000);
+insert into Guns values (4, 'Colt','AR-15',5.56,'USA' ,8000000);
+insert into Guns values (5, 'Heckler_Koch','G3',7.62,'Germany' ,2000000);
+insert into Guns values (6, 'FN_Herstal','FAL',7.62,'Belgium',2000000);
+
+
+select * from Guns order by manufactor;
+id|manufactor|name_of_gun|calibar|origin|amount_sold
+4|Colt|AR-15|5.56|USA|8000000
+6|FN_Herstal|FAL|7.62|Belgium|2000000
+5|Heckler_Koch|G3|7.62|Germany|2000000
+3|Israel_Military_Industries|uzi|9|Israel|10000000
+1|Kalashnikov|AK47|7.62|Russia|100000000
+2|Remington_Arms|Remington_Model|0.25|USA|10000000
+select * from Guns where calibar = 7.62
+union
+select * from Guns where calibar = 5.56
+order by amount_sold;
+id|manufactor|name_of_gun|calibar|origin|amount_sold
+5|Heckler_Koch|G3|7.62|Germany|2000000
+6|FN_Herstal|FAL|7.62|Belgium|2000000
+4|Colt|AR-15|5.56|USA|8000000
+1|Kalashnikov|AK47|7.62|Russia|100000000
+select * from Guns where manufactor = 'Colt';
+id|manufactor|name_of_gun|calibar|origin|amount_sold
+4|Colt|AR-15|5.56|USA|8000000
+select amount_sold from Guns;
+amount_sold
+100000000
+10000000
+10000000
+8000000
+2000000
+2000000
+select avg(amount_sold) from Guns;
+avg(amount_sold)
+22000000.0
+select sum(amount_sold) from Guns;
+sum(amount_sold)
+132000000
